@@ -12,7 +12,9 @@ class LogList extends Component {
         const { email, expr } = log.val();
         const serverKey = log.key;
         logList.push({ email, expr, serverKey });
+        // logList = [{ email, expr, serverKey }] + logList;
       })
+      logList.reverse();
       this.props.setLogs(logList);
     })
   }
